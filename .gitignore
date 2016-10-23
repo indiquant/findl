@@ -91,3 +91,8 @@ ENV/
 # IDE
 .idea/*.*
 .idea/
+
+# Build
+.build
+.dist
+.findl.egg-info
