@@ -22,7 +22,7 @@ def get_options_nse(undl):
 
     for exp in _nse_options_expiries:
         pg = get_option_page(undl, exp, undltype)
-        sp = BeautifulSoup(pg)
+        sp = BeautifulSoup(pg, 'lxml')
         t, s = get_live(sp.body)
         opts = parse_options_body(sp.body)
 
