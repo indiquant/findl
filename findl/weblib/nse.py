@@ -157,8 +157,6 @@ def get_option_page(symbol, exp='-', undltype='index'):
         site = option_site.format(symbol=symbol, instrument=opt_instrument_type[undltype],
                                   expiry=datetime.strptime(exp, '%Y-%m-%d').strftime('%d%b%Y').upper())
 
-    print(site)
-
     try:
 
         logging.debug("Getting data from:" + site)
@@ -188,7 +186,6 @@ def get_time(opt):
     children = opt.find_all('span')
 
     for ch in children:
-        print ch
 
         txt = ch.text.replace(',', '').lower()
 
@@ -211,7 +208,6 @@ def get_live(opt):
     t, s = None, None
 
     for ch in children:
-        print ch
 
         txt = ch.text.replace(',', '').lower()
 
@@ -239,7 +235,6 @@ def get_expiries(body):
     ex = []
 
     for ch in _ex:
-        print ch.text
 
         for _e in ch:
             try:
@@ -264,8 +259,7 @@ def parse_options_body(opt_body):
     for r in opt_tbl.find_all('tr'):
 
         if r.text.find('CALLS') >= 0 and r.text.find('PUTS') >= 0:
-
-            print('row-1')
+            pass
 
         else:
 
